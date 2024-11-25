@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/output.css">
+    <link rel="stylesheet" href="./css/debug.css">
+    <script src="https://kit.fontawesome.com/adb0c386ea.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>  
+
+    <title>SnapBuy</title>
+</head>
+<body>
+
+
+    <section class="top-nav">
+        <div class="wrapper">
+            <nav class="space-x-5">
+                <a href="#">About Us</a>
+                <a href="#">Privacy</a>
+                <a href="#">FAQ</a>
+                <a href="#">Careers</a>
+            </nav>
+            <nav class="flex space-x-5">
+                <a href="#">My Wishlist</a>
+                <a href="#">Track Your Order</a>
+                <div class="ml-3 space-x-3">
+                    <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+    <section id="main-navigation" class="main-nav">
+        <div class="wrapper">
+            <a class="brand" href="#">Snap<b>Buy</b></a>
+            <nav class="collapsible-nav hidden">
+                <a href="#">Home</a>
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Baby Collection</a>
+                <a href="#">Pages</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </nav>
+            <div class="space-x-5 text-2xl">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <a href="#"><i class="fa-regular fa-user"></i></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+
+            <button class="collapsible-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </section>
+
+
+
+    <section class="text-center text-white bg-black">
+        <p class="py-2">Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer <a href="#" class="underline">Shop Now</a></p>
+    </section>
+
+
+    <!-- Slider main container -->
+    <section class="swiper w-full h-[450px]" id="hero-slider">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+
+            <div class="swiper-slide bg-gray-200">
+                <div class="wrapper">
+                    <div class="slide">
+                        <p class="cursive-font text-3xl">Fashion Sale</p>
+                        <h1 class="text-5xl font-semibold">Minimal Menz Style</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Fusce pellentesque nibh neque, at volutpat dui congue ornare.
+                            Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
+                        <a class="inline-block px-6 py-3 font-semibold text-white bg-black" href="#">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide bg-gray-400">
+                <div class="wrapper">
+                    <div class="slide">
+                        <p class="cursive-font text-3xl">Fashion Sale</p>
+                        <h1 class="text-5xl font-semibold">Minimal Menz Style</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Fusce pellentesque nibh neque, at volutpat dui congue ornare.
+                            Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
+                        <a class="inline-block px-6 py-3 font-semibold text-white bg-black" href="#">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <button class="swiper-button-prev"></button>
+        <button class="swiper-button-next"></button>
+
+    </section>
+
+
+
+    <section class="mt-20 cards-nav">
+        <div class="wrapper">
+
+            <div class="card group">
+                <img class="card-image group-hover:scale-110" src="./images/placeholder.webp">
+                <a class="card-link group-hover:mt-44" href="#">
+                    <p class="group-hover:mb-0">Men's Fashion</p>
+                    <span class="group-hover:opacity-100">Shop Now</span>
+                </a>
+            </div>
+
+            <div class="card group">
+                <img class="card-image group-hover:scale-110" src="./images/placeholder.webp">
+                <a class="card-link group-hover:mt-44" href="#">
+                    <p class="group-hover:mb-0">Women's Fashion</p>
+                    <span class="group-hover:opacity-100">Shop Now</span>
+                </a>
+            </div>
+
+            <div class="card group">
+                <img class="card-image group-hover:scale-110" src="./images/placeholder.webp">
+                <a class="card-link group-hover:mt-44" href="#">
+                    <p class="group-hover:mb-0">Babies Fashion</p>
+                    <span class="group-hover:opacity-100">Shop Now</span>
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section class="mt-20 trend">
+        <div class="wrapper">
+            <div class="trend-tab">
+                <h2 class="text-3xl font-semibold">Trending This Week</h2>
+                <div class="space-x-5">
+                    <button class="tab-btn" data-tab="tab-one">Men</button>
+                    <button class="tab-btn" data-tab="tab-two">Women</button>
+                    <button class="tab-btn" data-tab="tab-three">Baby</button>
+                    <button class="tab-btn" data-tab="tab-four">Fashion</button>
+                </div>
+            </div>
+
+
+            <div class="tab-content">
+                <div class="tab-panel bg-slate-300" data-tab-content="tab-one">
+                    <!-- Slider main container -->
+                    <div class="swiper" id="trending-slider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                        <!-- Slides -->
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+
+                <div class="tab-panel bg-slate-400 hidden" data-tab-content="tab-two">
+                    <!-- Slider main container -->
+                    <div class="swiper" id="trending-slider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                        <!-- Slides -->
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+
+                <div class="tab-panel bg-slate-300 hidden" data-tab-content="tab-three">
+                    <!-- Slider main container -->
+                    <div class="swiper" id="trending-slider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                        <!-- Slides -->
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+
+                <div class="tab-panel bg-slate-400 hidden" data-tab-content="tab-four">
+                    <!-- Slider main container -->
+                    <div class="swiper" id="trending-slider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                        <!-- Slides -->
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="swiper-slide relative bg-gray-400 group">
+                                <div class="absolute top-0 left-0 w-full flex justify-center translate-y-72 opacity-0 z-50 transition-all duration-500 ease-in-out group-hover:opacity-100">
+                                    <ul class="flex shadow bg-white">
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li class="p-5 transition-all duration-500 ease-in-out hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block">
+                                    <div class="overflow-hidden h-96 bg-gray-200">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="./images/placeholder.webp">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center">
+                                        <p class="transition-all duration-500 ease-in-out group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                                        <div>
+                                            <span>$98.00</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-20 testimonial">
+        <div class="wrapper">
+            <!-- Slider main container -->
+            <div class="swiper" id="testimonial-slider">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-slide">
+                            <h2>Customer Testimonial</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Fusce pellentesque nibh neque, at volutpat dui congue ornare.
+                                Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
+                            <div class="testimonial-author">
+                                <div class="size-14 rounded-full overflow-hidden">
+                                    <img  class="h-14 object-cover" src="./images/placeholder.webp">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold">John Doe</span>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-slide">
+                            <h2>Customer Testimonial</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Fusce pellentesque nibh neque, at volutpat dui congue ornare.
+                                Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
+                            <div class="testimonial-author">
+                                <div class="size-14 rounded-full overflow-hidden">
+                                    <img  class="h-14 object-cover" src="./images/placeholder.webp">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold">John Doe</span>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-slide">
+                            <h2>Customer Testimonial</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Fusce pellentesque nibh neque, at volutpat dui congue ornare.
+                                Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
+                            <div class="testimonial-author">
+                                <div class="size-14 rounded-full overflow-hidden">
+                                    <img  class="h-14 object-cover" src="./images/placeholder.webp">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold">John Doe</span>
+                                    <span>Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mt-20 yml">
+        <div class="wrapper">
+
+            <h2>You May Like</h2>
+
+            <div class="yml-wrapper">
+
+                <div class="yml-card group">
+                    <div class="yml-navbar group-hover:opacity-100">
+                        <ul class="flex shadow bg-white">
+                            <li class="hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                            <li class="hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                            <li class="hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="product-link">
+                        <div class="overflow-hidden h-96 bg-gray-200">
+                            <img class="group-hover:scale-105" src="./images/placeholder.webp">
+                        </div>
+                        <div class="product-details">
+                            <p class="group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                            <div>
+                                <span>$98.00</span>
+                                <span class="line-through">$120.00</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="yml-card group">
+                    <div class="yml-navbar group-hover:opacity-100">
+                        <ul class="flex shadow bg-white">
+                            <li class="hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                            <li class="hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                            <li class="hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="product-link">
+                        <div class="overflow-hidden h-96 bg-gray-200">
+                            <img class="group-hover:scale-105" src="./images/placeholder.webp">
+                        </div>
+                        <div class="product-details">
+                            <p class="group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                            <div>
+                                <span>$98.00</span>
+                                <span class="line-through">$120.00</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="yml-card group">
+                    <div class="yml-navbar group-hover:opacity-100">
+                        <ul class="flex shadow bg-white">
+                            <li class="hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                            <li class="hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                            <li class="hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="product-link">
+                        <div class="overflow-hidden h-96 bg-gray-200">
+                            <img class="group-hover:scale-105" src="./images/placeholder.webp">
+                        </div>
+                        <div class="product-details">
+                            <p class="group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                            <div>
+                                <span>$98.00</span>
+                                <span class="line-through">$120.00</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="yml-card group">
+                    <div class="yml-navbar group-hover:opacity-100">
+                        <ul class="flex shadow bg-white">
+                            <li class="hover:bg-gray-400"><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                            <li class="hover:bg-gray-400"><i class="fa-regular fa-heart text-2xl"></i></li>
+                            <li class="hover:bg-gray-400"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="product-link">
+                        <div class="overflow-hidden h-96 bg-gray-200">
+                            <img class="group-hover:scale-105" src="./images/placeholder.webp">
+                        </div>
+                        <div class="product-details">
+                            <p class="group-hover:font-semibold group-hover:text-gray-300">Cashmere Tank + Bag</p>
+                            <div>
+                                <span>$98.00</span>
+                                <span class="line-through">$120.00</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="mt-20 latest-news">
+        <div class="wrapper">
+            <h2>Latest News</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="h-96 object-cover" src="./images/placeholder.webp">
+                    </div>
+                    <span>Fashion Tips</span>
+                    <h3 class="text-xl font-semibold">Lorem ipsum dolor sit amet.</h3>
+                    <p>Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img class="h-96 object-cover" src="./images/placeholder.webp">
+                    </div>
+                    <span>Fashion Tips</span>
+                    <h3 class="text-xl font-semibold">Lorem ipsum dolor sit amet.</h3>
+                    <p>Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img class="h-96 object-cover" src="./images/placeholder.webp">
+                    </div>
+                    <span>Fashion Tips</span>
+                    <h3 class="text-xl font-semibold">Lorem ipsum dolor sit amet.</h3>
+                    <p>Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.</p>
+                    <a href="#">Read More</a>
+                </div>
+                
+    
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section class="mt-20 services">
+        <div class="wrapper">
+
+            <div class="services-group">
+                <div class="service">
+                    <i class="text-4xl fa-solid fa-truck-fast"></i>
+                    <p class="text-xl font-semibold">Fast & Free Delivery</p>
+                    <p>Free delivery on all orders</p>
+                </div>
+    
+                <div class="service">
+                    <i class="text-4xl fa-regular fa-credit-card"></i>
+                    <p class="text-xl font-semibold">Secure Payment</p>
+                    <p>Free delivery on all orders</p>
+                </div>
+    
+                <div class="service">
+                    <i class="text-4xl fa-solid fa-money-bill-transfer"></i>
+                    <p class="text-xl font-semibold">Money Back Guarantee</p>
+                    <p>Free delivery on all orders</p>
+                </div>
+    
+                <div class="service">
+                    <i class="text-4xl fa-solid fa-headset"></i>
+                    <p class="text-xl font-semibold">Online Support</p>
+                    <p>Free delivery on all orders</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="mt-20 footer">
+        <div class="wrapper">
+            <div class="subscription">
+                <div>
+                    <h3 class="text-2xl font-semibold">Subscribe Newsletter</h3>
+                    <p>Subscribe newsletter to get 5% on all products.</p>
+                </div>
+    
+                <div class="subs-form">
+                    <form class="space-x-1" action="#" method="post">
+                        <input type="search" name="search" id="search" placeholder="Email">
+                        <button class="p-3 bg-gray-500" type="submit">Subscribe</button>
+                    </form>
+                </div>
+    
+                <div class="ml-3 space-x-3">
+                    <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <a class="text-2xl" href="#">Snap<b>Buy</b></a>
+                <div>
+                    <p class="mb-5 text-lg font-semibold">Shop Men</p>
+                    <nav class="flex flex-col space-y-3">
+                        <a href="#">Clothing Fashion</a>
+                        <a href="#">Winter</a>
+                        <a href="#">Summer</a>
+                        <a href="#">Formal</a>
+                        <a href="#">Casual</a>
+                    </nav>
+                </div>
+                <div>
+                    <p class="mb-5 text-lg font-semibold">Shop Women</p>
+                    <nav class="flex flex-col space-y-3">
+                        <a href="#">Clothing Fashion</a>
+                        <a href="#">Winter</a>
+                        <a href="#">Summer</a>
+                        <a href="#">Formal</a>
+                        <a href="#">Casual</a>
+                    </nav>
+                </div>
+                <div>
+                    <p class="mb-5 text-lg font-semibold">Baby Collection</p>
+                    <nav class="flex flex-col space-y-3">
+                        <a href="#">Clothing Fashion</a>
+                        <a href="#">Winter</a>
+                        <a href="#">Summer</a>
+                        <a href="#">Formal</a>
+                        <a href="#">Casual</a>
+                    </nav>
+                </div>
+                <div>
+                    <p class="mb-5 text-lg font-semibold">Quick Links</p>
+                    <nav class="flex flex-col space-y-3">
+                        <a href="#">Track Your Order</a>
+                        <a href="#">Support</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Carrier</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="py-5 text-center">
+                <p>Copyright ©2024 All rights reserved | Designed And Developed by Joseph Dugho </p>
+            </div>
+
+        </div>
+    </section>
+    
+    <script src="./js/script.js"></script>
+
+
+</body>
+</html>
