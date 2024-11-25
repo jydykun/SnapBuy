@@ -16,6 +16,7 @@ app/Uploads
 
 # Ignore node_modules folder
 node_modules/
+test/
 
 # Migration
 migration/
