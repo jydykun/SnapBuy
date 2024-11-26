@@ -24,3 +24,8 @@
 .animate-slide-top {
     animation: slideFromTop 0.5s ease-in-out;
 }
+
+.search-show {
+    height: 40px;
+
+}

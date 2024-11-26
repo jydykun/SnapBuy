@@ -76,11 +76,11 @@ function tab(){
 
             // Remove all the shadow effect
             buttons.forEach(btn => {
-                btn.classList.remove("shadow-[0_4px_0_0_black]");
+                btn.classList.remove("shadow-[0_4px_0_0_#3730a3]", "font-semibold", "text-indigo-800");
             })
 
             // Add shadow effect when active
-            e.target.classList.add("shadow-[0_4px_0_0_black]");
+            e.target.classList.add("shadow-[0_4px_0_0_#3730a3]", "font-semibold", "text-indigo-800");
 
             // Show the target panel
             const tabData = e.target.dataset.tab;
@@ -110,5 +110,14 @@ console.log(btn)
 btn.addEventListener("click", ()=>{
     menu.classList.toggle("hidden")
 })
+
+const searchBtn = document.querySelector("#search-btn");
+const searchBar = document.querySelector("#search-bar");
+
+searchBtn.addEventListener("click", ()=>{
+    searchBar.classList.toggle("search-show");
+});
+
+
 
 
