@@ -1,0 +1,33 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+env/
+.env
+.venv
+
+# Instance
+instance/
+
+# Uploads
+app/Uploads
+
+# Ignore node_modules folder
+node_modules/
+test/
+
+# Migration
+migration/
+
+# Log files
+*.log
+
+# IDE specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
