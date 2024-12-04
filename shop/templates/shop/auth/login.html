@@ -1,0 +1,18 @@
+{% extends "shop/base.html" %}
+
+{% block main %}
+
+
+<div class="flex justify-center items-center w-full h-screen bg-indigo-800">
+    <div class="w-3/4 p-10 rounded-md shadow space-y-5 bg-white md:w-1/3">
+        <h1 class="text-3xl text-center font-semibold text-indigo-800">Login</h1>
+        <form class="login-form flex flex-col" action="{% url 'shop:login' %}" method="POST" novalidate>
+            {% csrf_token %}
+            {{ form }}
+            <button class="py-2 text-white rounded bg-indigo-800 transition-all hover:bg-indigo-600" type="submit">Sign In</button>
+        </form>
+        <p class="text-center">Don’t have an account? <a class="font-semibold text-indigo-800" href="{% url 'shop:signup' %}">Sign Up</a></p>
+    </div>
+</div>
+
+{% endblock %}

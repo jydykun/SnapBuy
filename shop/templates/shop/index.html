@@ -1,0 +1,448 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'shop/css/output.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/debug.css' %}">
+    <script src="https://kit.fontawesome.com/adb0c386ea.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>  
+
+    <title>{{ title }}</title>
+</head>
+<body>
+
+    <section class="top-nav">
+        <div class="wrapper">
+            <nav class="space-x-5">
+                <a href="#">About Us</a>
+                <a href="#">Privacy</a>
+                <a href="#">FAQ</a>
+                <a href="#">Careers</a>
+            </nav>
+            <nav class="flex space-x-5">
+                <a href="#">My Wishlist</a>
+                <a href="#">Track Your Order</a>
+                <div class="ml-3 space-x-3">
+                    <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+
+    <section id="main-navigation" class="main-nav">
+        <div class="wrapper">
+
+            <a class="brand" href="#">Snap<b>Buy</b></a>
+            
+            <nav class="collapsible-nav hidden">
+                <a href="#">Home</a>
+                <a href="#">Men</a>
+                <a href="#">Women</a>
+                <a href="#">Baby Collection</a>
+                <a href="#">Pages</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </nav>
+
+            <div class="space-x-5 text-2xl">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass hover:text-indigo-800"></i></button>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'shop:dashboard' %}"><i class="fa-regular fa-user"></i></a>
+                {% else %}
+                    <a href="{% url 'shop:login' %}"><i class="fa-regular fa-user"></i></a>
+                {% endif %}
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+
+            <button class="collapsible-btn"><i class="fa-solid fa-bars"></i></button>
+
+            <div class="search-bar" id="search-bar">
+                <form class="w-full" action="#">
+                    <input class="w-full p-2 focus:outline-none bg-red-200" type="search" name="search" id="search">
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="text-center text-white bg-indigo-800">
+        <p class="py-2">Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer <a href="#" class="underline">Shop Now</a></p>
+    </section>
+
+
+    <!-- Slider main container -->
+    <section class="swiper w-full h-[450px]" id="hero-slider">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+        <!-- Slides -->
+
+            <div class="swiper-slide bg-gray-200">
+                <div class="wrapper">
+                    <div class="slide">
+                        <p class="cursive-font text-3xl">Fashion Sale</p>
+                        <h1 class="text-5xl font-semibold text-indigo-800">Minimal Menz Style</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Fusce pellentesque nibh neque, at volutpat dui congue ornare.
+                            Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide bg-gray-400">
+                <div class="wrapper">
+                    <div class="slide">
+                        <p class="cursive-font text-3xl">Fashion Sale</p>
+                        <h1 class="text-5xl font-semibold text-indigo-800">Minimal Menz Style</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Fusce pellentesque nibh neque, at volutpat dui congue ornare.
+                            Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
+                        <a href="#">SHOP NOW</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+        <button class="swiper-button-prev"></button>
+        <button class="swiper-button-next"></button>
+
+    </section>
+
+
+
+    <section class="mt-20 cards-nav">
+        <div class="wrapper">
+            {% for i in links %}
+            <div class="card group"> 
+                <img class="card-image group-hover:scale-110" src="{% static 'shop/images/placeholder.webp' %}">
+                <a class="card-link group-hover:mt-44" href="{% url i.url %}">
+                    <p class="group-hover:mb-0">{{ i.text }}</p>
+                    <span class="group-hover:opacity-100">Shop Now</span>
+                </a>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </section>
+
+
+    <section class="mt-20 trend">
+        <div class="wrapper">
+            <div class="trend-tab">
+                <h2 class="text-3xl font-semibold">Trending This Week</h2>
+                <div class="space-x-5">
+                    <button class="tab-btn" data-tab="tab-one">Men</button>
+                    <button class="tab-btn" data-tab="tab-two">Women</button>
+                    <button class="tab-btn" data-tab="tab-three">Baby</button>
+                    <button class="tab-btn" data-tab="tab-four">Fashion</button>
+                </div>
+            </div>
+
+
+            <div class="tab-content">
+                {% for tab in tabs %}
+                <div class="tab-panel {% if forloop.first %}{% else %}hidden{% endif %}" data-tab-content="tab-{{ tab.data }}">
+                    <!-- Slider main container -->
+                    <div class="swiper" id="trending-slider">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                        <!-- Slides -->
+                            
+                            {% for item in tab.products %}
+                            <div class="swiper-slide relative group">
+                                <div class="choice-btn group-hover:opacity-100">
+                                    <ul class="flex shadow">
+                                        <li><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                                        <li><i class="fa-regular fa-heart text-2xl"></i></li>
+                                        <li><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                                    </ul>
+                                </div>
+
+                                <a href="#" class="block text-white">
+                                    <div class="overflow-hidden h-96">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="{% static item.image %}">
+                                    </div>
+                                    <div class="flex flex-col py-5 text-center text-white bg-indigo-800 ">
+                                        <p class="transition-all duration-500 ease-in-out">{{ item.name }}</p>
+                                        <div>
+                                            <span>{{ item.price }}</span>
+                                            <span class="line-through">$120.00</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="mt-20 testimonial">
+        <div class="wrapper">
+            <!-- Slider main container -->
+            <div class="swiper" id="testimonial-slider">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                <!-- Slides -->
+
+                    {% for item in testimonials %}
+                    <div class="swiper-slide">
+                        <div class="testimonial-slide">
+                            <h2>Customer Testimonial</h2>
+                            <p>{{ item.comment }}</p>
+                            <div class="testimonial-author">
+                                <div class="size-14 rounded-full overflow-hidden">
+                                    <img  class="h-14 object-cover" src="{% static item.image %}">
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="font-semibold">{{ item.name }}</span>
+                                    <span>{{ item.role }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+                
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mt-20 yml">
+        <div class="wrapper">
+
+            <h2>You May Like</h2>
+
+            <div class="yml-wrapper">
+
+                {% for item in yml %}
+                <div class="yml-card group">
+                    <div class="choice-btn group-hover:opacity-100">
+                        <ul class="flex shadow bg-white">
+                            <li><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
+                            <li><i class="fa-regular fa-heart text-2xl"></i></li>
+                            <li><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="product-link">
+                        <div class="overflow-hidden h-96 bg-gray-200">
+                            <img class="group-hover:scale-105" src="{% static item.image %}">
+                        </div>
+                        <div class="flex flex-col py-5 text-center text-white bg-indigo-800">
+                            <p class="group-hover:font-semibold group-hover:text-gray-300">{{ item.name}}</p>
+                            <div>
+                                <span>{{ item.price }}</span>
+                                <span class="line-through">$120.00</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="mt-20 latest-news">
+        <div class="wrapper">
+            <h2>Latest News</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="h-96 object-cover" src="./images/placeholder.webp">
+                    </div>
+                    <span>Fashion Tips</span>
+                    <h3 class="text-xl font-semibold">Lorem ipsum dolor sit amet.</h3>
+                    <p>Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img class="h-96 object-cover" src="./images/placeholder.webp">
+                    </div>
+                    <span>Fashion Tips</span>
+                    <h3 class="text-xl font-semibold">Lorem ipsum dolor sit amet.</h3>
+                    <p>Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.</p>
+                    <a href="#">Read More</a>
+                </div>
+
+                <div class="card">
+                    <div class="card-image">
+                        <img class="h-96 object-cover" src="./images/placeholder.webp">
+                    </div>
+                    <span>Fashion Tips</span>
+                    <h3 class="text-xl font-semibold">Lorem ipsum dolor sit amet.</h3>
+                    <p>Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.</p>
+                    <a href="#">Read More</a>
+                </div>
+                
+    
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <section class="mt-20 services">
+        <div class="wrapper">
+
+            <div class="services-group">
+                <div class="service">
+                    <i class="text-4xl fa-solid fa-truck-fast"></i>
+                    <p class="text-xl font-semibold">Fast & Free Delivery</p>
+                    <p>Free delivery on all orders</p>
+                </div>
+    
+                <div class="service">
+                    <i class="text-4xl fa-regular fa-credit-card"></i>
+                    <p class="text-xl font-semibold">Secure Payment</p>
+                    <p>Free delivery on all orders</p>
+                </div>
+    
+                <div class="service">
+                    <i class="text-4xl fa-solid fa-money-bill-transfer"></i>
+                    <p class="text-xl font-semibold">Money Back Guarantee</p>
+                    <p>Free delivery on all orders</p>
+                </div>
+    
+                <div class="service">
+                    <i class="text-4xl fa-solid fa-headset"></i>
+                    <p class="text-xl font-semibold">Online Support</p>
+                    <p>Free delivery on all orders</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="mt-20 footer">
+        <div class="wrapper">
+            <div class="subscription">
+                <div>
+                    <h3 class="text-2xl font-semibold">Subscribe Newsletter</h3>
+                    <p>Subscribe newsletter to get 5% on all products.</p>
+                </div>
+    
+                <div class="subs-form">
+                    <form class="space-x-1" action="#" method="post">
+                        <input type="search" name="search" id="search" placeholder="Email">
+                        <button class="p-3 bg-gray-500" type="submit">Subscribe</button>
+                    </form>
+                </div>
+    
+                <div class="ml-3 space-x-3">
+                    <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <a class="text-2xl" href="#">Snap<b>Buy</b></a>
+                <div>
+                    <p class="mb-5 text-lg font-semibold">Shop Men</p>
+                    <nav class="flex flex-col space-y-3">
+                        <a href="#">Clothing Fashion</a>
+                        <a href="#">Winter</a>
+                        <a href="#">Summer</a>
+                        <a href="#">Formal</a>
+                        <a href="#">Casual</a>
+                    </nav>
+                </div>
+                <div>
+                    <p class="mb-5 text-lg font-semibold">Shop Women</p>
+                    <nav class="flex flex-col space-y-3">
+                        <a href="#">Clothing Fashion</a>
+                        <a href="#">Winter</a>
+                        <a href="#">Summer</a>
+                        <a href="#">Formal</a>
+                        <a href="#">Casual</a>
+                    </nav>
+                </div>
+                <div>
+                    <p class="mb-5 text-lg font-semibold">Baby Collection</p>
+                    <nav class="flex flex-col space-y-3">
+                        <a href="#">Clothing Fashion</a>
+                        <a href="#">Winter</a>
+                        <a href="#">Summer</a>
+                        <a href="#">Formal</a>
+                        <a href="#">Casual</a>
+                    </nav>
+                </div>
+                <div>
+                    <p class="mb-5 text-lg font-semibold">Quick Links</p>
+                    <nav class="flex flex-col space-y-3">
+                        <a href="#">Track Your Order</a>
+                        <a href="#">Support</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Carrier</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="py-5 text-center">
+                <p>Copyright ©2024 All rights reserved | Designed And Developed by Joseph Dugho </p>
+            </div>
+
+        </div>
+    </section>
+    
+    <script src="{% static 'shop/js/script.js' %}"></script>
+
+
+</body>
+</html>
