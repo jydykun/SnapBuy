@@ -17,6 +17,7 @@
     {% endif %}
 
     <h1>Dashboard Page</h1>
+    <h2>Hi {{ user }}</h2>
     <form action="{% url 'shop:logout' %}" method="post">
         {% csrf_token %}
         <button type="submit">Logout</button>

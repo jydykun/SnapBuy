@@ -1,0 +1,50 @@
+
+    <h1>Product List</h1>
+
+    <div class="product-list">
+        {% for product in products %}
+            <div class="product-card">
+                <h3>{{ product.name }}</h3>
+                <p>Price: ${{ product.price }}</p>
+                <p>{{ product.description }}</p>
+                <button class="add-to-cart" data-id="{{ product.id }}">Add to Cart</button>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="cart-status">
+        <p>Items in Cart: <span id="cart-counter">0</span></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cartCounter = document.getElementById("cart-counter");
+
+            // Handle the "Add to Cart" button clicks
+            document.querySelectorAll(".add-to-cart").forEach(button => {
+                button.addEventListener("click", function() {
+                    const productId = this.getAttribute("data-id");
+
+                    // Send the request to add the product to the cart
+                    fetch(`/cart/add/${productId}/`, {
+                        method: "POST",
+                        headers: {
+                            "X-CSRFToken": "{{ csrf_token }}"
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            cartCounter.textContent = data.total_items;  // Update the cart counter
+                        } else {
+                            alert(data.error || "Failed to add product to cart.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+                });
+            });
+        });
+    </script>
+

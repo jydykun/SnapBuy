@@ -50,7 +50,6 @@
         </div>
     </section>
 
-
     <section id="main-navigation" class="main-nav">
         <div class="wrapper">
 
@@ -69,7 +68,7 @@
             <div class="space-x-5 text-2xl">
                 <button id="search-btn"><i class="fa-solid fa-magnifying-glass hover:text-indigo-800"></i></button>
                 {% if user.is_authenticated %}
-                    <a href="{% url 'shop:dashboard' %}"><i class="fa-regular fa-user"></i></a>
+                    <a href="{% url 'shop:dashboard' username=user.username %}"><i class="fa-regular fa-user"></i></a>
                 {% else %}
                     <a href="{% url 'shop:login' %}"><i class="fa-regular fa-user"></i></a>
                 {% endif %}
@@ -282,6 +281,36 @@
                 </div>
                 {% endfor %}
 
+                {% for product in products %}
+                <div class="yml-card group">
+                    <div class="choice-btn group-hover:opacity-100">
+                        <ul class="flex shadow bg-white">
+                            <li>
+                                <form action="{% url 'shop:add_to_cart' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button type="submit"><i class="fa-solid fa-cart-shopping text-2xl"></i></button>
+                                </form>
+                            </li>
+                            <li><i class="fa-regular fa-heart text-2xl"></i></li>
+                            <li><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
+                        </ul>
+                    </div>
+
+                    <a href="#" class="product-link">
+                        <div class="overflow-hidden h-96 bg-gray-200">
+                            <img class="group-hover:scale-105" src="{% static 'shop/images/placeholder.webp' %}">
+                        </div>
+                        <div class="flex flex-col py-5 text-center text-white bg-indigo-800">
+                            <p class="group-hover:font-semibold group-hover:text-gray-300">{{ product.name}}</p>
+                            <div>
+                                <span>${{ product.price }}</span>
+                                <span class="line-through">$120.00</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
 
             </div>
         </div>
@@ -442,6 +471,36 @@
     </section>
     
     <script src="{% static 'shop/js/script.js' %}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const cartCounter = document.getElementById("cart-counter");
+    
+            document.querySelectorAll(".add-to-cart").forEach(button => {
+                button.addEventListener("click", function() {
+                    const productId = this.getAttribute("data-id");
+    
+                    fetch(`/cart/add/${productId}/`, {
+                        method: "POST",
+                        headers: {
+                            "X-CSRFToken": "{{ csrf_token }}"
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            cartCounter.textContent = data.total_items;
+                        } else {
+                            alert(data.error || "Failed to add product to cart.");
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error:", error);
+                    });
+                });
+            });
+        });
+    </script>
+    
 
 
 </body>
