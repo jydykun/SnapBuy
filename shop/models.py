@@ -7,7 +7,7 @@ class Product(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return self.name
+        return f"Product <{self.name}><{self.price}><{self.description}>"
 
 
 class Cart(models.Model):
@@ -16,7 +16,7 @@ class Cart(models.Model):
     products = models.ManyToManyField(Product, through="CartItem")
 
     def __str__(self):
-        return f"Cart {self.user.username if self.user else self.session_key}"
+        return f"Cart [{self.user.username if self.user else self.session_key}], "
 
 
 class CartItem(models.Model):
@@ -25,7 +25,14 @@ class CartItem(models.Model):
     quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
-        return f"{self.quantity} of {self.product.name}"
+        return f"[{self.quantity} of {self.product.name}]"
     
     def get_total_price(self):
         return self.quantity * self.product.price
+    
+
+class TestModel(models.Model):
+    username = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f'{self.username}'

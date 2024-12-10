@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
 from .forms import CustomAuthenticationForm
-from .models import Product, Cart, CartItem
+from .models import Product, Cart, CartItem, TestModel
 from .utils.context import context_home
 
 
@@ -28,37 +28,42 @@ def dashboard(request, username):
 
 
 ############### CART SYSTEM VIEWS ###############
-def add_to_cart(request, product_id, quantity):
+
+def add_to_cart(request, product_id):
+    # Get the product ID
     product = Product.objects.get(id=product_id)
+
+    # Save the authenticated user to the database
+    # Else create a session for anonymous user
     if request.user.is_authenticated:
-        cart, created = Cart.objects.get_or_create(user = request.user)
+        cart, created = Cart.objects.get_or_create(user=request.user)
     else:
+        # Get the session_key
         session_key = request.session.session_key
+        # If none create the session
         if not session_key:
-            request.session.create()
-        cart, created = Cart.objects.get_or_create(session_key=request.session.session_key)
+            session_key = request.session.create()
+        # Save the session to the database
+        cart, created = Cart.objects.get_or_create(session_key=session_key)
 
     cart_item, created = CartItem.objects.get_or_create(
         cart = cart,
         product = product
     )
-
-    cart_item.quantity += quantity
+    if not created:
+        cart_item.quantity += 1
+    else:
+        cart_item.quantity = 1
     cart_item.save()
 
-    return cart_item
+    total_quantity = sum(item.quantity for item in cart.cartitem_set.all())
+    return JsonResponse({"total_quantity": total_quantity})
+        
 
-def add_to_cart_view(request, product_id):
-    if request.method == "POST":
-        quantity = int(request.POST.get("quantity", 1))
-        cart_item = add_to_cart(request, product_id, quantity)
-        return JsonResponse({"success": True, "quantity": cart_item.quantity})
-    return JsonResponse({'success': False, 'error': 'Invalid request'}, status=400)
 
 def test(request):
-    test = request.POST.get("key", 100)
-    items = request.session.get("cart")
-    return HttpResponse(items["1"]["name"])
+    post = request.session.create()
+    return HttpResponse(post)
 
 
 

@@ -72,7 +72,7 @@
                 {% else %}
                     <a href="{% url 'shop:login' %}"><i class="fa-regular fa-user"></i></a>
                 {% endif %}
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i><span id="cart-count">{{ total_quantity }}</span></a>
             </div>
 
             <button class="collapsible-btn"><i class="fa-solid fa-bars"></i></button>
@@ -286,7 +286,7 @@
                     <div class="choice-btn group-hover:opacity-100">
                         <ul class="flex shadow bg-white">
                             <li>
-                                <form action="{% url 'shop:add_to_cart' product.id %}" method="POST">
+                                <form class="add-to-cart-form" action="{% url 'shop:add_to_cart' product.id %}" method="POST">
                                     {% csrf_token %}
                                     <button type="submit"><i class="fa-solid fa-cart-shopping text-2xl"></i></button>
                                 </form>
@@ -472,33 +472,9 @@
     
     <script src="{% static 'shop/js/script.js' %}"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const cartCounter = document.getElementById("cart-counter");
-    
-            document.querySelectorAll(".add-to-cart").forEach(button => {
-                button.addEventListener("click", function() {
-                    const productId = this.getAttribute("data-id");
-    
-                    fetch(`/cart/add/${productId}/`, {
-                        method: "POST",
-                        headers: {
-                            "X-CSRFToken": "{{ csrf_token }}"
-                        }
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.success) {
-                            cartCounter.textContent = data.total_items;
-                        } else {
-                            alert(data.error || "Failed to add product to cart.");
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Error:", error);
-                    });
-                });
-            });
-        });
+        async function total_quantity(){
+            const response = await fetch()
+        }
     </script>
     
 
