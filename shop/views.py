@@ -7,6 +7,7 @@ from django.contrib.auth import login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
 from .forms import CustomAuthenticationForm
 from .models import Product, Cart, CartItem, TestModel
+from django.contrib.sessions.models import Session
 from .utils.context import context_home
 
 
@@ -61,6 +62,23 @@ def add_to_cart(request, product_id):
     # Get the total quantity in the cart
     total_quantity = sum(item.quantity for item in cart.cartitem_set.all())
     return JsonResponse({"total_quantity": total_quantity})
+
+def view_cart(request):
+    if request.user.is_authenticated:
+        cart, created = Cart.objects.get_or_create(user=request.user)
+    else:
+        # Get the session_key
+        session_key = request.session.session_key
+        # If none create the session
+        if not session_key:
+            session_key = request.session.create()
+        # Save the session to the database
+        cart, created = Cart.objects.get_or_create(session_key=session_key)
+
+
+    cart_items = CartItem.objects.filter(cart_id=cart.id).select_related("product")
+    c = {"cart_items": cart_items}
+    return render(request, "shop/cart.html", c)
         
 
 
