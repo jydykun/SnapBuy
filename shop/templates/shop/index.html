@@ -72,7 +72,7 @@
                 {% else %}
                     <a href="{% url 'shop:login' %}"><i class="fa-regular fa-user"></i></a>
                 {% endif %}
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i><span id="cart-count">{{ total_quantity }}</span></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count"></span></a>
             </div>
 
             <button class="collapsible-btn"><i class="fa-solid fa-bars"></i></button>
@@ -472,8 +472,44 @@
     
     <script src="{% static 'shop/js/script.js' %}"></script>
     <script>
-        async function total_quantity(){
-            const response = await fetch()
+        const forms = document.querySelectorAll(".add-to-cart-form");
+
+        forms.forEach(form=>{
+            form.addEventListener("submit", (e)=>{
+                e.preventDefault()
+                const actionUrl = e.target.action
+                const csrfToken = document.querySelector("input[name='csrfmiddlewaretoken']").value
+                total_quantity(actionUrl, csrfToken)
+
+            })
+        })
+
+        async function total_quantity(actionUrl, csrfToken){
+            try {
+                const response = await fetch(actionUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRFToken": csrfToken, // Include CSRF token
+                    },
+                    body: JSON.stringify({}),
+                })
+
+                if (!response.ok){
+                    throw new Error("Failed to add product to cart")
+                }
+
+                const data = await  response.json();
+
+                const cartQuantityElement = document.querySelector(".cart-count");
+                cartQuantityElement.textContent = data.total_quantity;
+
+                console.log("Cart updated successfully:", data);
+
+
+            } catch (error) {
+                console.error("Error", error)
+            }
         }
     </script>
     

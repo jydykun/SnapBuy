@@ -50,12 +50,15 @@ def add_to_cart(request, product_id):
         cart = cart,
         product = product
     )
+    # Increment by 1 if the product already exist in the database
+    # if none, save it.
     if not created:
         cart_item.quantity += 1
     else:
         cart_item.quantity = 1
     cart_item.save()
 
+    # Get the total quantity in the cart
     total_quantity = sum(item.quantity for item in cart.cartitem_set.all())
     return JsonResponse({"total_quantity": total_quantity})
         

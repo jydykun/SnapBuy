@@ -105,8 +105,6 @@ window.addEventListener("scroll", () => {
 const btn = document.querySelector(".collapsible-btn");
 const menu = document.querySelector(".collapsible-nav");
 
-console.log(btn)
-
 btn.addEventListener("click", ()=>{
     menu.classList.toggle("hidden")
 })
