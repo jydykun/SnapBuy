@@ -5,27 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-----------GOOGLE FONTS----------->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'shop/css/output.css' %}">
-    <link rel="stylesheet" href="{% static 'shop/css/debug.css' %}">
+    <!-----------FONTAWESOME----------->
     <script src="https://kit.fontawesome.com/adb0c386ea.js" crossorigin="anonymous"></script>
 
+    <!-----------MAIN CSS----------->
+    <link rel="stylesheet" href="{% static 'shop/css/output.css' %}">
+    <link rel="stylesheet" href="{% static 'shop/css/debug.css' %}">
+
+    <!-----------SWIPER JS----------->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <!-----------GSAP----------->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>  
 
     <title>{{ title }}</title>
 </head>
 <body>
+
+    {# DJANGO FLASH MESSAGES #}
     {% if messages %}
     <div class="messages">
         {% for message in messages %}
@@ -36,7 +43,54 @@
     </div>
     {% endif %}
 
-    {% block main %}
-    {% endblock %}
+    {% include "shop/parts/nav.html" %}
+
+    {% block main %}{% endblock %}
+
+    {% include "shop/parts/footer.html" %}
+
+    <script src="{% static 'shop/js/script.js' %}"></script>
+    <script>
+        const forms = document.querySelectorAll(".add-to-cart-form");
+
+        forms.forEach(form=>{
+            form.addEventListener("submit", (e)=>{
+                e.preventDefault()
+                const actionUrl = e.target.action
+                const csrfToken = document.querySelector("input[name='csrfmiddlewaretoken']").value
+                total_quantity(actionUrl, csrfToken)
+
+            })
+        })
+
+        async function total_quantity(actionUrl, csrfToken){
+            try {
+                const response = await fetch(actionUrl, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRFToken": csrfToken, // Include CSRF token
+                    },
+                    body: JSON.stringify({}),
+                })
+
+                if (!response.ok){
+                    throw new Error("Failed to add product to cart")
+                }
+
+                const data = await  response.json();
+
+                const cartQuantityElement = document.querySelector(".cart-count");
+                cartQuantityElement.textContent = data.total_quantity;
+
+                console.log("Cart updated successfully:", data);
+
+
+            } catch (error) {
+                console.error("Error", error)
+            }
+        }
+    </script>
+    
 </body>
 </html>

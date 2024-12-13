@@ -1,138 +1,9 @@
+{% extends "shop/base.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block main %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Send+Flowers&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'shop/css/output.css' %}">
-    <link rel="stylesheet" href="{% static 'shop/css/debug.css' %}">
-    <script src="https://kit.fontawesome.com/adb0c386ea.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>  
-
-    <title>{{ title }}</title>
-</head>
-<body>
-
-    <section class="top-nav">
-        <div class="wrapper">
-            <nav class="space-x-5">
-                <a href="#">About Us</a>
-                <a href="#">Privacy</a>
-                <a href="#">FAQ</a>
-                <a href="#">Careers</a>
-            </nav>
-            <nav class="flex space-x-5">
-                <a href="#">My Wishlist</a>
-                <a href="#">Track Your Order</a>
-                <div class="ml-3 space-x-3">
-                    <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
-                </div>
-            </nav>
-        </div>
-    </section>
-
-    <section id="main-navigation" class="main-nav">
-        <div class="wrapper">
-
-            <a class="brand" href="#">Snap<b>Buy</b></a>
-            
-            <nav class="collapsible-nav hidden">
-                <a href="#">Home</a>
-                <a href="#">Men</a>
-                <a href="#">Women</a>
-                <a href="#">Baby Collection</a>
-                <a href="#">Pages</a>
-                <a href="#">Blog</a>
-                <a href="#">Contact</a>
-            </nav>
-
-            <div class="space-x-5 text-2xl">
-                <button id="search-btn"><i class="fa-solid fa-magnifying-glass hover:text-indigo-800"></i></button>
-                {% if user.is_authenticated %}
-                    <a href="{% url 'shop:dashboard' username=user.username %}"><i class="fa-regular fa-user"></i></a>
-                {% else %}
-                    <a href="{% url 'shop:login' %}"><i class="fa-regular fa-user"></i></a>
-                {% endif %}
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count"></span></a>
-            </div>
-
-            <button class="collapsible-btn"><i class="fa-solid fa-bars"></i></button>
-
-            <div class="search-bar" id="search-bar">
-                <form class="w-full" action="#">
-                    <input class="w-full p-2 focus:outline-none bg-red-200" type="search" name="search" id="search">
-                </form>
-            </div>
-
-        </div>
-    </section>
-
-
-
-    <section class="text-center text-white bg-indigo-800">
-        <p class="py-2">Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer <a href="#" class="underline">Shop Now</a></p>
-    </section>
-
-
-    <!-- Slider main container -->
-    <section class="swiper w-full h-[450px]" id="hero-slider">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-        <!-- Slides -->
-
-            <div class="swiper-slide bg-gray-200">
-                <div class="wrapper">
-                    <div class="slide">
-                        <p class="cursive-font text-3xl">Fashion Sale</p>
-                        <h1 class="text-5xl font-semibold text-indigo-800">Minimal Menz Style</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Fusce pellentesque nibh neque, at volutpat dui congue ornare.
-                            Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
-                        <a href="#">SHOP NOW</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide bg-gray-400">
-                <div class="wrapper">
-                    <div class="slide">
-                        <p class="cursive-font text-3xl">Fashion Sale</p>
-                        <h1 class="text-5xl font-semibold text-indigo-800">Minimal Menz Style</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Fusce pellentesque nibh neque, at volutpat dui congue ornare.
-                            Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
-                        <a href="#">SHOP NOW</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    
-        <button class="swiper-button-prev"></button>
-        <button class="swiper-button-next"></button>
-
-    </section>
-
-
+    {% include "shop/parts/slider.html" %}
 
     <section class="mt-20 cards-nav">
         <div class="wrapper">
@@ -185,7 +56,7 @@
 
                                 <a href="#" class="block text-white">
                                     <div class="overflow-hidden h-96">
-                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="{% static item.image %}">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="">
                                     </div>
                                     <div class="flex flex-col py-5 text-center text-white bg-indigo-800 ">
                                         <p class="transition-all duration-500 ease-in-out">{{ item.name }}</p>
@@ -228,7 +99,7 @@
                             <p>{{ item.comment }}</p>
                             <div class="testimonial-author">
                                 <div class="size-14 rounded-full overflow-hidden">
-                                    <img  class="h-14 object-cover" src="{% static item.image %}">
+                                    <img  class="h-14 object-cover" src="">
                                 </div>
                                 <div class="flex flex-col">
                                     <span class="font-semibold">{{ item.name }}</span>
@@ -268,7 +139,7 @@
 
                     <a href="#" class="product-link">
                         <div class="overflow-hidden h-96 bg-gray-200">
-                            <img class="group-hover:scale-105" src="{% static item.image %}">
+                            <img class="group-hover:scale-105" src="">
                         </div>
                         <div class="flex flex-col py-5 text-center text-white bg-indigo-800">
                             <p class="group-hover:font-semibold group-hover:text-gray-300">{{ item.name}}</p>
@@ -298,7 +169,7 @@
 
                     <a href="#" class="product-link">
                         <div class="overflow-hidden h-96 bg-gray-200">
-                            <img class="group-hover:scale-105" src="{% static 'shop/images/placeholder.webp' %}">
+                            <img class="group-hover:scale-105" src="">
                         </div>
                         <div class="flex flex-col py-5 text-center text-white bg-indigo-800">
                             <p class="group-hover:font-semibold group-hover:text-gray-300">{{ product.name}}</p>
@@ -392,128 +263,5 @@
 
         </div>
     </section>
-
-
-    <section class="mt-20 footer">
-        <div class="wrapper">
-            <div class="subscription">
-                <div>
-                    <h3 class="text-2xl font-semibold">Subscribe Newsletter</h3>
-                    <p>Subscribe newsletter to get 5% on all products.</p>
-                </div>
     
-                <div class="subs-form">
-                    <form class="space-x-1" action="#" method="post">
-                        <input type="search" name="search" id="search" placeholder="Email">
-                        <button class="p-3 bg-gray-500" type="submit">Subscribe</button>
-                    </form>
-                </div>
-    
-                <div class="ml-3 space-x-3">
-                    <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram fa-lg"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter fa-lg"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin-in fa-lg"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube fa-lg"></i></a>
-                </div>
-            </div>
-
-            <div class="bottom">
-                <a class="text-2xl" href="#">Snap<b>Buy</b></a>
-                <div>
-                    <p class="mb-5 text-lg font-semibold">Shop Men</p>
-                    <nav class="flex flex-col space-y-3">
-                        <a href="#">Clothing Fashion</a>
-                        <a href="#">Winter</a>
-                        <a href="#">Summer</a>
-                        <a href="#">Formal</a>
-                        <a href="#">Casual</a>
-                    </nav>
-                </div>
-                <div>
-                    <p class="mb-5 text-lg font-semibold">Shop Women</p>
-                    <nav class="flex flex-col space-y-3">
-                        <a href="#">Clothing Fashion</a>
-                        <a href="#">Winter</a>
-                        <a href="#">Summer</a>
-                        <a href="#">Formal</a>
-                        <a href="#">Casual</a>
-                    </nav>
-                </div>
-                <div>
-                    <p class="mb-5 text-lg font-semibold">Baby Collection</p>
-                    <nav class="flex flex-col space-y-3">
-                        <a href="#">Clothing Fashion</a>
-                        <a href="#">Winter</a>
-                        <a href="#">Summer</a>
-                        <a href="#">Formal</a>
-                        <a href="#">Casual</a>
-                    </nav>
-                </div>
-                <div>
-                    <p class="mb-5 text-lg font-semibold">Quick Links</p>
-                    <nav class="flex flex-col space-y-3">
-                        <a href="#">Track Your Order</a>
-                        <a href="#">Support</a>
-                        <a href="#">FAQ</a>
-                        <a href="#">Carrier</a>
-                        <a href="#">About Us</a>
-                        <a href="#">Contact Us</a>
-                    </nav>
-                </div>
-            </div>
-
-            <div class="py-5 text-center">
-                <p>Copyright ©2024 All rights reserved | Designed And Developed by Joseph Dugho </p>
-            </div>
-
-        </div>
-    </section>
-    
-    <script src="{% static 'shop/js/script.js' %}"></script>
-    <script>
-        const forms = document.querySelectorAll(".add-to-cart-form");
-
-        forms.forEach(form=>{
-            form.addEventListener("submit", (e)=>{
-                e.preventDefault()
-                const actionUrl = e.target.action
-                const csrfToken = document.querySelector("input[name='csrfmiddlewaretoken']").value
-                total_quantity(actionUrl, csrfToken)
-
-            })
-        })
-
-        async function total_quantity(actionUrl, csrfToken){
-            try {
-                const response = await fetch(actionUrl, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRFToken": csrfToken, // Include CSRF token
-                    },
-                    body: JSON.stringify({}),
-                })
-
-                if (!response.ok){
-                    throw new Error("Failed to add product to cart")
-                }
-
-                const data = await  response.json();
-
-                const cartQuantityElement = document.querySelector(".cart-count");
-                cartQuantityElement.textContent = data.total_quantity;
-
-                console.log("Cart updated successfully:", data);
-
-
-            } catch (error) {
-                console.error("Error", error)
-            }
-        }
-    </script>
-    
-
-
-</body>
-</html>
+{% endblock %}

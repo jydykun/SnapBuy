@@ -64,7 +64,7 @@
     }
 
     #hero-slider .wrapper {
-        @apply container mx-auto px-5 h-full flex justify-start items-center
+        @apply container mx-auto px-5 h-full flex items-center
     }
 
     #hero-slider .wrapper > .slide {

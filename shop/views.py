@@ -14,7 +14,7 @@ from .utils.context import context_home
 
 def index(request):
     products = Product.objects.all()
-    c = {"products":products} #context_home()
+    c = {"products":products}
     return render(request, "shop/index.html", c)
 
 @login_required()

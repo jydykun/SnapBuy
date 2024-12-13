@@ -67,27 +67,29 @@ function tab(){
     const buttons = document.querySelectorAll(".tab-btn");
     const tabPanels = document.querySelectorAll(".tab-panel");
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", (e)=>{
-            // Hide all panels
-            tabPanels.forEach(panel => {
-                panel.classList.add("hidden");
-            })
-
-            // Remove all the shadow effect
-            buttons.forEach(btn => {
-                btn.classList.remove("shadow-[0_4px_0_0_#3730a3]", "font-semibold", "text-indigo-800");
-            })
-
-            // Add shadow effect when active
-            e.target.classList.add("shadow-[0_4px_0_0_#3730a3]", "font-semibold", "text-indigo-800");
-
-            // Show the target panel
-            const tabData = e.target.dataset.tab;
-            const panel = document.querySelector(`[data-tab-content=${tabData}]`);
-            panel.classList.remove("hidden");
+    if (buttons){
+        buttons.forEach(btn => {
+            btn.addEventListener("click", (e)=>{
+                // Hide all panels
+                tabPanels.forEach(panel => {
+                    panel.classList.add("hidden");
+                })
+    
+                // Remove all the shadow effect
+                buttons.forEach(btn => {
+                    btn.classList.remove("shadow-[0_4px_0_0_#3730a3]", "font-semibold", "text-indigo-800");
+                })
+    
+                // Add shadow effect when active
+                e.target.classList.add("shadow-[0_4px_0_0_#3730a3]", "font-semibold", "text-indigo-800");
+    
+                // Show the target panel
+                const tabData = e.target.dataset.tab;
+                const panel = document.querySelector(`[data-tab-content=${tabData}]`);
+                panel.classList.remove("hidden");
+            });
         });
-    });
+    }
 };
 
 
