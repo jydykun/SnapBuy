@@ -5,11 +5,14 @@
 
     {% include "shop/parts/slider.html" %}
 
+
     <section class="mt-20 cards-nav">
         <div class="wrapper">
-            {% for i in links %}
+            {% for i in context.links %}
             <div class="card group"> 
-                <img class="card-image group-hover:scale-110" src="{% static 'shop/images/placeholder.webp' %}">
+                <div class="card-image group-hover:scale-110">
+                    <img class="opacity-50 -translate-y-1/2 group-hover:blur-sm" src="{% static i.image %}">
+                </div>
                 <a class="card-link group-hover:mt-44" href="{% url i.url %}">
                     <p class="group-hover:mb-0">{{ i.text }}</p>
                     <span class="group-hover:opacity-100">Shop Now</span>
@@ -36,7 +39,7 @@
 
 
             <div class="tab-content">
-                {% for tab in tabs %}
+                {% for tab in context.tabs %}
                 <div class="tab-panel {% if forloop.first %}{% else %}hidden{% endif %}" data-tab-content="tab-{{ tab.data }}">
                     <!-- Slider main container -->
                     <div class="swiper" id="trending-slider">
@@ -47,7 +50,7 @@
                             {% for item in tab.products %}
                             <div class="swiper-slide relative group">
                                 <div class="choice-btn group-hover:opacity-100">
-                                    <ul class="flex shadow">
+                                    <ul class="flex shadow bg-white">
                                         <li><i class="fa-solid fa-cart-shopping text-2xl"></i></li>
                                         <li><i class="fa-regular fa-heart text-2xl"></i></li>
                                         <li><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
@@ -56,13 +59,13 @@
 
                                 <a href="#" class="block text-white">
                                     <div class="overflow-hidden h-96">
-                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="">
+                                        <img class="h-96 object-cover transition-all duration-500 ease-in-out group-hover:scale-105" src="{% static item.image %}">
                                     </div>
                                     <div class="flex flex-col py-5 text-center text-white bg-indigo-800 ">
                                         <p class="transition-all duration-500 ease-in-out">{{ item.name }}</p>
                                         <div>
                                             <span>{{ item.price }}</span>
-                                            <span class="line-through">$120.00</span>
+                                            <!--<span class="line-through">$120.00</span>-->
                                         </div>
                                     </div>
                                 </a>
@@ -92,7 +95,7 @@
                 <div class="swiper-wrapper">
                 <!-- Slides -->
 
-                    {% for item in testimonials %}
+                    {% for item in context.testimonials %}
                     <div class="swiper-slide">
                         <div class="testimonial-slide">
                             <h2>Customer Testimonial</h2>
@@ -127,7 +130,7 @@
 
             <div class="yml-wrapper">
 
-                {% for item in yml %}
+                {% for item in context.yml %}
                 <div class="yml-card group">
                     <div class="choice-btn group-hover:opacity-100">
                         <ul class="flex shadow bg-white">
@@ -139,49 +142,18 @@
 
                     <a href="#" class="product-link">
                         <div class="overflow-hidden h-96 bg-gray-200">
-                            <img class="group-hover:scale-105" src="">
+                            <img class="group-hover:scale-105" src="{% static item.image %}">
                         </div>
                         <div class="flex flex-col py-5 text-center text-white bg-indigo-800">
-                            <p class="group-hover:font-semibold group-hover:text-gray-300">{{ item.name}}</p>
+                            <p class="group-hover:font-semibold group-hover:text-gray-300">{{ item.name }}</p>
                             <div>
                                 <span>{{ item.price }}</span>
-                                <span class="line-through">$120.00</span>
+                                <span class="line-through">{{ item.discount }}</span>
                             </div>
                         </div>
                     </a>
                 </div>
                 {% endfor %}
-
-                {% for product in products %}
-                <div class="yml-card group">
-                    <div class="choice-btn group-hover:opacity-100">
-                        <ul class="flex shadow bg-white">
-                            <li>
-                                <form class="add-to-cart-form" action="{% url 'shop:add_to_cart' product.id %}" method="POST">
-                                    {% csrf_token %}
-                                    <button type="submit"><i class="fa-solid fa-cart-shopping text-2xl"></i></button>
-                                </form>
-                            </li>
-                            <li><i class="fa-regular fa-heart text-2xl"></i></li>
-                            <li><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></li>
-                        </ul>
-                    </div>
-
-                    <a href="#" class="product-link">
-                        <div class="overflow-hidden h-96 bg-gray-200">
-                            <img class="group-hover:scale-105" src="">
-                        </div>
-                        <div class="flex flex-col py-5 text-center text-white bg-indigo-800">
-                            <p class="group-hover:font-semibold group-hover:text-gray-300">{{ product.name}}</p>
-                            <div>
-                                <span>${{ product.price }}</span>
-                                <span class="line-through">$120.00</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-
 
             </div>
         </div>
@@ -194,40 +166,18 @@
         <div class="wrapper">
             <h2>Latest News</h2>
             <div class="cards">
+                {% for news in context.news %}
                 <div class="card">
                     <div class="card-image">
-                        <img class="h-96 object-cover" src="./images/placeholder.webp">
+                        <img class="h-96 object-cover" src="{% static news.image %}">
                     </div>
                     <span>Fashion Tips</span>
-                    <h3 class="text-xl font-semibold">Lorem ipsum dolor sit amet.</h3>
-                    <p>Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.</p>
+                    <h3 class="text-xl font-semibold">{{ news.title }}</h3>
+                    <p>{{ news.content }}</p>
                     <a href="#">Read More</a>
                 </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img class="h-96 object-cover" src="./images/placeholder.webp">
-                    </div>
-                    <span>Fashion Tips</span>
-                    <h3 class="text-xl font-semibold">Lorem ipsum dolor sit amet.</h3>
-                    <p>Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.</p>
-                    <a href="#">Read More</a>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img class="h-96 object-cover" src="./images/placeholder.webp">
-                    </div>
-                    <span>Fashion Tips</span>
-                    <h3 class="text-xl font-semibold">Lorem ipsum dolor sit amet.</h3>
-                    <p>Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.</p>
-                    <a href="#">Read More</a>
-                </div>
-                
-    
+                {% endfor %}
             </div>
-
-
         </div>
     </section>
 

@@ -2,19 +2,18 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse, JsonResponse
 from django.contrib import messages
 from django.contrib.auth.models  import User
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login as auth_login, logout as auth_logout
 from django.contrib.auth.decorators import login_required
 from .forms import CustomAuthenticationForm
-from .models import Product, Cart, CartItem, TestModel
-from django.contrib.sessions.models import Session
+from .models import Product, Cart, CartItem
 from .utils.context import context_home
 
 
 
 def index(request):
     products = Product.objects.all()
-    c = {"products":products}
+    c = {"products":products, "context":context_home}
     return render(request, "shop/index.html", c)
 
 @login_required()
@@ -80,17 +79,6 @@ def view_cart(request):
     c = {"cart_items": cart_items}
     return render(request, "shop/cart.html", c)
         
-
-
-def test(request):
-    post = request.session.create()
-    return HttpResponse(post)
-
-
-
-
-
-
 
 ############### AUTHENTICATION ###############
 

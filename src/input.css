@@ -83,12 +83,12 @@
     }
 
     .cards-nav .card {
-        @apply relative text-center overflow-hidden
+        @apply relative h-[280px] text-center overflow-hidden
         md:w-4/12
     }
 
     .cards-nav .card > .card-image {
-        @apply transition-all duration-700 
+        @apply transition-all duration-700
     }
 
     .cards-nav .card > .card-link {
