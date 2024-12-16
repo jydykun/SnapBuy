@@ -49,3 +49,9 @@
     padding: 5px;
     font-size: 14px;
 }
+
+.login {
+    background-image: url("../images/slider-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

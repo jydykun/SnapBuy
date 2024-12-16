@@ -109,14 +109,14 @@ def context_home():
         "testimonials": [{
                 "name" : "John Doe",
                 "role" : "Developer",
-                "image": "shop/images/placeholder.webp",
+                "image": "shop/images/mens-fashion-link.jpg",
                 "comment" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\
                             Fusce pellentesque nibh neque, at volutpat dui congue ornare.\
                             Ut dignissim velit a lobortis scelerisque. Suspendisse potenti."
             },{
                 "name" : "Jane Doe",
                 "role" : "Designer",
-                "image": "shop/images/placeholder.webp",
+                "image": "shop/images/womens-fashion-link.jpg",
                 "comment" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\
                             Fusce pellentesque nibh neque, at volutpat dui congue ornare.\
                             Ut dignissim velit a lobortis scelerisque. Suspendisse potenti."
@@ -145,15 +145,15 @@ def context_home():
          "news" : [{
                 "title": "Lorem ipsum dolor sit amet.",
                 "content" : "Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.",
-                "image" : "shop/images/placeholder.webp"
+                "image" : "shop/images/mens-fashion-link.jpg"
             },{
                 "title": "Lorem ipsum dolor sit amet.",
                 "content" : "Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.",
-                "image" : "shop/images/placeholder.webp"
+                "image" : "shop/images/womens-fashion-link.jpg"
             },{
                 "title": "Lorem ipsum dolor sit amet.",
                 "content" : "Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.",
-                "image" : "shop/images/placeholder.webp"
+                "image" : "shop/images/babies-fashion-link.jpg"
             }]
         
     }

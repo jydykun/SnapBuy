@@ -1,5 +1,7 @@
+{% load static %}
+
 <section class="text-center text-white bg-indigo-800">
-    <p class="py-2">Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer <a href="#" class="underline">Shop Now</a></p>
+    <p class="py-2">Sale Up To 50% Biggest Discounts. Hurry! Limited Perriod Offer <a href="#" class="underline hover:text-white">Shop Now</a></p>
 </section>
 
 
@@ -9,29 +11,31 @@
     <div class="swiper-wrapper">
     <!-- Slides -->
 
-        <div class="swiper-slide bg-gray-200">
+        <div class="swiper-slide relative bg-white">
             <div class="wrapper justify-start">
                 <div class="slide">
                     <p class="cursive-font text-3xl">Fashion Sale</p>
-                    <h1 class="text-5xl font-semibold text-indigo-800">Minimal Menz Style</h1>
+                    <h1 class="text-5xl font-semibold text-indigo-800">Minimal Womens Style</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Fusce pellentesque nibh neque, at volutpat dui congue ornare.
                         Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
                     <a href="#">SHOP NOW</a>
                 </div>
             </div>
+            <img class="w-full h-full object-cover absolute top-0 left-0 -z-10" src="{% static 'shop/images/slider-2.jpg' %}" alt="">
         </div>
 
-        <div class="swiper-slide bg-gray-400">
+        <div class="swiper-slide relative text-white">
             <div class="wrapper justify-end">
                 <div class="slide">
                     <p class="cursive-font text-3xl">Fashion Sale</p>
-                    <h1 class="text-5xl font-semibold text-indigo-800">Minimal Menz Style</h1>
+                    <h1 class="text-5xl font-semibold">Minimal Mens Style</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Fusce pellentesque nibh neque, at volutpat dui congue ornare.
                         Ut dignissim velit a lobortis scelerisque. Suspendisse potenti.</p>
                     <a href="#">SHOP NOW</a>
                 </div>
+                <img class="w-full h-full object-cover absolute top-0 left-0 -z-10" src="{% static 'shop/images/slider-1.jpg' %}" alt="">
             </div>
         </div>
 
