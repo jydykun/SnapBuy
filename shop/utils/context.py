@@ -23,27 +23,27 @@ def context_home():
             "products" : [{
                     "name": "Varsity Bomber Jacket",
                     "price" : "$28.99",
-                    "image" : "shop/images/men-tshirt-three.webp"
+                    "image" : "images/men-tshirt-three.webp"
                 },{
                     "name": "Short Sleeve Pocket Tee",
                     "price" : "$5.98",
-                    "image" : "shop/images/men-tshirt-one.webp"
+                    "image" : "images/men-tshirt-one.webp"
                 },{
                     "name": "Polo Shirt",
                     "price" : "$14.00",
-                    "image" : "shop/images/men-tshirt-two.webp"
+                    "image" : "images/men-tshirt-two.webp"
                 },{
                     "name": "Warm Winter Coat",
                     "price" : "$64.99",
-                    "image" : "shop/images/men-tshirt-four.webp"
+                    "image" : "images/men-tshirt-four.webp"
                 },{
                     "name": "5-Pack Crewneck Tee",
                     "price" : "$14.98",
-                    "image" : "shop/images/men-tshirt-five.webp"
+                    "image" : "images/men-tshirt-five.webp"
                 },{
                     "name": "Beanies",
                     "price" : "$7.98",
-                    "image" : "shop/images/men-tshirt-six.webp"
+                    "image" : "images/men-tshirt-six.webp"
                 }]
             },{
                 "category" : "Women",
@@ -51,23 +51,23 @@ def context_home():
                 "products" : [{
                     "name": "Sweatshirt Crewneck",
                     "price" : "$12.00",
-                    "image" : "shop/images/women-tshirt-one.webp"
+                    "image" : "images/women-tshirt-one.webp"
                 },{
                     "name": "Long Sleeve Crewneck",
                     "price" : "$12.99",
-                    "image" : "shop/images/women-tshirt-two.webp"
+                    "image" : "images/women-tshirt-two.webp"
                 },{
                     "name": "Sweaters",
                     "price" : "$35.99",
-                    "image" : "shop/images/women-tshirt-three.webp"
+                    "image" : "images/women-tshirt-three.webp"
                 },{
                     "name": "Fleece Joggers",
                     "price" : "$15.00",
-                    "image" : "shop/images/women-tshirt-four.webp"
+                    "image" : "images/women-tshirt-four.webp"
                 },{
                     "name": "Zip-up Bodysuit",
                     "price" : "$18.98",
-                    "image" : "shop/images/women-tshirt-five.webp"
+                    "image" : "images/women-tshirt-five.webp"
                 }]
             },{
                 "category" : "Babies",
@@ -75,23 +75,23 @@ def context_home():
                 "products" : [{
                     "name": "Summer Clothes Set",
                     "price" : "$10.00",
-                    "image" : "shop/images/babies-two.webp"
+                    "image" : "images/babies-two.webp"
                 },{
                     "name": "Baby Shirt Set",
                     "price" : "$10.39",
-                    "image" : "shop/images/babies-one.webp"
+                    "image" : "images/babies-one.webp"
                 },{
                     "name": "Fleece Sweatpants",
                     "price" : "$3.00",
-                    "image" : "shop/images/babies-three.webp"
+                    "image" : "images/babies-three.webp"
                 },{
                     "name": "Crew Kids Socks",
                     "price" : "$9.98",
-                    "image" : "shop/images/babies-four.webp"
+                    "image" : "images/babies-four.webp"
                 },{
                     "name": "Hoodies Puffer Jacker",
                     "price" : "$14.98",
-                    "image" : "shop/images/babies-five.webp"
+                    "image" : "images/babies-five.webp"
                 }]
             },{
                 "category" : "Babies",
@@ -99,24 +99,24 @@ def context_home():
                 "products" : [{
                     "name": "Cozy Holiday Set",
                     "price" : "$11.98",
-                    "image" : "shop/images/fashion-one.webp"
+                    "image" : "images/fashion-one.webp"
                 },{
                     "name": "Summer Clothes Set",
                     "price" : "$10.00",
-                    "image" : "shop/images/babies-two.webp"
+                    "image" : "images/babies-two.webp"
                 }]
             }],
         "testimonials": [{
                 "name" : "John Doe",
                 "role" : "Developer",
-                "image": "shop/images/mens-fashion-link.jpg",
+                "image": "images/mens-fashion-link.jpg",
                 "comment" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\
                             Fusce pellentesque nibh neque, at volutpat dui congue ornare.\
                             Ut dignissim velit a lobortis scelerisque. Suspendisse potenti."
             },{
                 "name" : "Jane Doe",
                 "role" : "Designer",
-                "image": "shop/images/womens-fashion-link.jpg",
+                "image": "images/womens-fashion-link.jpg",
                 "comment" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\
                             Fusce pellentesque nibh neque, at volutpat dui congue ornare.\
                             Ut dignissim velit a lobortis scelerisque. Suspendisse potenti."
@@ -125,35 +125,35 @@ def context_home():
                 "name": "Short Sleeve Pocket Tee",
                 "price" : "$5.98",
                 "discount" : "16.00",
-                "image" : "shop/images/men-tshirt-one.webp"
+                "image" : "images/men-tshirt-one.webp"
             },{
                 "name": "Polo Shirt",
                 "price" : "$14.00",
                 "discount" : "16.00",
-                "image" : "shop/images/men-tshirt-two.webp"
+                "image" : "images/men-tshirt-two.webp"
             },{
                 "name": "Sweatshirt Crewneck",
                 "price" : "$12.00",
                 "discount" : "69.99",
-                "image" : "shop/images/women-tshirt-one.webp"
+                "image" : "images/women-tshirt-one.webp"
             },{
                 "name": "Baby Shirt Set",
                 "price" : "$10.39",
                 "discount" : "12.99",
-                "image" : "shop/images/babies-one.webp"
+                "image" : "images/babies-one.webp"
             }],
          "news" : [{
                 "title": "Lorem ipsum dolor sit amet.",
                 "content" : "Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.",
-                "image" : "shop/images/mens-fashion-link.jpg"
+                "image" : "images/mens-fashion-link.jpg"
             },{
                 "title": "Lorem ipsum dolor sit amet.",
                 "content" : "Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.",
-                "image" : "shop/images/womens-fashion-link.jpg"
+                "image" : "images/womens-fashion-link.jpg"
             },{
                 "title": "Lorem ipsum dolor sit amet.",
                 "content" : "Consectetur adipiscing elit. Fusce pellentesque nibh neque, at volutpat dui congue ornare.",
-                "image" : "shop/images/babies-fashion-link.jpg"
+                "image" : "images/babies-fashion-link.jpg"
             }]
         
     }
