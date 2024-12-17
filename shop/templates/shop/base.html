@@ -17,8 +17,8 @@
     <script src="https://kit.fontawesome.com/adb0c386ea.js" crossorigin="anonymous"></script>
 
     <!-----------MAIN CSS----------->
-    <link rel="stylesheet" href="static/shop/css/output.css">
-    <link rel="stylesheet" href="static/shop/css/debug.css">
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <link rel="stylesheet" href="{% static 'css/debug.css' %}">
 
     <!-----------SWIPER JS----------->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
@@ -50,7 +50,7 @@
 
     {% include "shop/parts/footer.html" %}
 
-    <script src="{% static 'shop/js/script.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
     <script>
         const forms = document.querySelectorAll(".add-to-cart-form");
 

@@ -6,15 +6,15 @@ def context_home():
         "links" : [{
             "text" : "Men's Fashion",
             "url" : "shop:index",
-            "image": "shop/images/mens-fashion-link.jpg"
+            "image": "images/mens-fashion-link.jpg"
             },{
             "text" : "Womens's Fashion",
             "url" : "shop:index",
-            "image": "shop/images/womens-fashion-link.jpg"
+            "image": "images/womens-fashion-link.jpg"
             },{
             "text" : "Babies Fashion",
             "url" : "shop:index",
-            "image": "shop/images/babies-fashion-link.jpg"
+            "image": "images/babies-fashion-link.jpg"
             }],
 
         "tabs": [{
